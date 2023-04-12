@@ -12,7 +12,7 @@ class AppState {
 public:
 	bool appChanged = 0;
 	int time = 0;
-	int speed_factor = 10;
+	int speed_factor = 1;
 	std::vector<Node*> nodes;
 	static AppState* getInstance() {
 		static AppState* instance = new AppState();

@@ -13,20 +13,20 @@ class Algorithm {
 protected:
 	virtual int moveAndGet(kDirection direction, int at, std::vector<Node*>& world, int row_node_count) final {
 		switch (direction) {
-		case kDirection::Down: {
-			if (at-1 < 0 || (at != 0 && at % row_node_count == 0)) {
+		case kDirection::Top: {
+			if (at-1 <= 0 || (at != 0 && at % row_node_count == 0)) {
 				return -1;
 			}
 			return at - 1;
 		} break;
-		case kDirection::Top: {
-			if (at+1 > world.size() || (at != 0 && at % row_node_count == 0)) {
+		case kDirection::Down: {
+			if (at+1 > world.size() || (at != 0 && (at+1) % row_node_count == 0)) {
 				return -1;
 			}
 			return at + 1;
 		} break;
 		case kDirection::Right: {
-			if ((at + row_node_count) > world.size()) {
+			if ((at + row_node_count) >= world.size()) {
 				return -1;
 			}
 			return at + row_node_count;
