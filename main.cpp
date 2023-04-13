@@ -3,6 +3,7 @@
 #include <wx/timer.h>
 #include <vector>
 #include "app_state.hpp"
+#include "DFS.hpp"
 
 class BasicDrawPane : public wxPanel
 {
@@ -35,6 +36,7 @@ public:
 
 IMPLEMENT_APP_NO_MAIN(MyApp)
 int main() {
+  ALGORITHM(algo::DFS_ALL_NODES)
   wxEntry();
 }
 

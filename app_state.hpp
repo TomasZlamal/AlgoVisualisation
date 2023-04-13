@@ -3,7 +3,6 @@
 #include "BFS.hpp"
 namespace algo {
 constexpr int genesis_point = 376;
-#define ALGORITHM(x) AppState::getInstance()->changeAlgo<x>();
 class AppState {
 	AppState(){
 		changeAlgo<BFS_ALL_NODES>();
@@ -35,5 +34,6 @@ public:
 			delete algo;
 		algo = new T{};
 	}
-};
+}; 
+#define ALGORITHM(x) algo::AppState::getInstance()->changeAlgo<x>();
 }
