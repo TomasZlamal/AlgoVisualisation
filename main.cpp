@@ -44,7 +44,7 @@ int main() {
 class MyFrame : public wxFrame
 {
 public:
-  MyFrame() : wxFrame((wxFrame*)NULL, -1, wxT("Algorithm Visualization"), wxPoint(50, 50), wxSize(meta::width, meta::height+ meta::formatting_factor))
+  MyFrame() : wxFrame((wxFrame*)NULL, -1, wxT("Algorithm Visualization"), wxPoint(50, 50), wxSize(meta::width + meta::pixel_alloc, meta::height+ meta::formatting_factor))
   {}
   void onClose(wxCloseEvent& evt)
   {

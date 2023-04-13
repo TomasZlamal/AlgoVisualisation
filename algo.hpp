@@ -8,7 +8,7 @@ enum class kDirection{
 	Top,
 	Down
 };
-const kDirection AllDirections[] = { kDirection::Left, kDirection::Right, kDirection::Top, kDirection::Down};
+const kDirection AllDirections[] = { kDirection::Left, kDirection::Top, kDirection::Right, kDirection::Down};
 class Algorithm {
 protected:
 	virtual int moveAndGet(kDirection direction, int at, std::vector<Node*>& world, int row_node_count) final {
