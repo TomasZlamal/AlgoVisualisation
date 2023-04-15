@@ -1,5 +1,5 @@
 # AlgoVisualisation
-A project to visualise certain node-exploring algorithms
+A project to visualise certain node-exploring algorithms built using wxWidgets.
 
 Currently, I've only implemented BFS and DFS to visit all nodes and a certain node. In the future, I plan on adding obstacles.
 
