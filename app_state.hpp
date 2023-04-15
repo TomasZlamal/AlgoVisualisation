@@ -2,20 +2,21 @@
 #include "algo.hpp"
 #include "BFS.hpp"
 namespace algo {
-constexpr int genesis_point = 376;
 class AppState {
 	AppState(){
 		changeAlgo<BFS_ALL_NODES>();
 	}
 	Algorithm* algo;
 public:
-	bool appChanged = 0;
 	int time = 0;
 	int speed_factor = 1;
 	std::vector<Node*> nodes;
 	static AppState* getInstance() {
 		static AppState* instance = new AppState();
 		return instance;
+	}
+	void resetNodes() {
+		std::for_each(nodes.begin(), nodes.end(), [](Node* node) {node->type = kNodeType::Unmarked; });
 	}
 	void appNext() {
 		if (algo) {
@@ -28,12 +29,17 @@ public:
 	bool algoIsDone() {
 		return algo->isDone();
 	}
+	bool algoHasDestination() {
+		return algo->getAlgoType() == kAlgoType::Dest;
+	}
 	template <typename T>
 	void changeAlgo() {
 		if(algo)
 			delete algo;
 		algo = new T{};
 	}
+	const char* getAlgoName() {
+		return algo->getAlgoName();
+	}
 }; 
-#define ALGORITHM(x) algo::AppState::getInstance()->changeAlgo<x>();
 }

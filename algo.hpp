@@ -8,6 +8,10 @@ enum class kDirection{
 	Top,
 	Down
 };
+enum class kAlgoType {
+	AllNodes,
+	Dest
+};
 const kDirection AllDirections[] = { kDirection::Left, kDirection::Top, kDirection::Right, kDirection::Down};
 class Algorithm {
 protected:
@@ -37,11 +41,15 @@ protected:
 			}
 			return at - row_node_count;
 		} break;
+		default:
+			return -1;
 		}
 	}
 public:
 	virtual void next(std::vector<Node*>& world) = 0;
 	virtual bool isDone() = 0;
 	virtual void init(int genesis) = 0;
+	virtual kAlgoType getAlgoType() = 0;
+	virtual const char* getAlgoName() = 0;
 };
 }

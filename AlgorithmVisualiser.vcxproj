@@ -131,9 +131,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algo.hpp" />
+    <ClInclude Include="all_node_algo.hpp" />
     <ClInclude Include="app_state.hpp" />
     <ClInclude Include="BFS.hpp" />
     <ClInclude Include="DFS.hpp" />
+    <ClInclude Include="find_node_algo.hpp" />
     <ClInclude Include="meta.hpp" />
     <ClInclude Include="util.hpp" />
   </ItemGroup>

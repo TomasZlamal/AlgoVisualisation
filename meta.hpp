@@ -7,5 +7,6 @@ namespace meta {
 	constexpr int gap = 2;
 	constexpr int pixel_alloc = height / node_row_count - gap;
 	constexpr int formatting_factor = 40;
-	constexpr const char* name = "Algorithm Visualization - DFS to visit all nodes";
+	constexpr int genesis_point = 376;
+	constexpr int dest = 456;
 }

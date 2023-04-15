@@ -38,5 +38,11 @@
     <ClInclude Include="meta.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="all_node_algo.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="find_node_algo.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

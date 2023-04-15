@@ -36,7 +36,7 @@ public:
 
 IMPLEMENT_APP_NO_MAIN(MyApp)
 int main() {
-  ALGORITHM(algo::DFS_ALL_NODES)
+  algo::AppState::getInstance()->changeAlgo<algo::BFS_ALL_NODES>();
   wxEntry();
 }
 
@@ -65,10 +65,14 @@ bool MyApp::OnInit()
   algo::AppState* inst = algo::AppState::getInstance();
   for (int i = 0; i < meta::node_row_count; i++) {
     for (int j = 0; j < meta::node_row_count; j++) {
-      if (i*meta::node_row_count + j == algo::genesis_point) {
+      if (i*meta::node_row_count + j == meta::genesis_point) {
         Node* node = new Node{ kNodeType::Genesis, {i * (meta::pixel_alloc + meta::gap), j * (meta::pixel_alloc + meta::gap) + meta::text_padding} };
         inst->nodes.push_back(node);
-        inst->init(algo::genesis_point);
+        inst->init(meta::genesis_point);
+      }
+      else if (i * meta::node_row_count + j == meta::dest && inst->algoHasDestination()) {
+        Node* node = new Node{ kNodeType::Destination, {i * (meta::pixel_alloc + meta::gap), j * (meta::pixel_alloc + meta::gap) + meta::text_padding} };
+        inst->nodes.push_back(node);
       }
       else
         inst->nodes.push_back(new Node{ kNodeType::Unmarked, {i * (meta::pixel_alloc + meta::gap), j * (meta::pixel_alloc + meta::gap) + meta::text_padding} });
@@ -137,10 +141,9 @@ void BasicDrawPane::paintNow()
 void BasicDrawPane::render(wxDC& dc)
 {
   algo::AppState* inst = algo::AppState::getInstance();
-  dc.DrawText(meta::name, 280, 10);
+  dc.DrawText(inst->getAlgoName(), 280, 10);
   dc.SetBackground(wxColour(100, 100, 100));
   if (++inst->time % inst->speed_factor == 0 && !inst->algoIsDone()) {
-    //std::cout << "Next ";
     inst->appNext();
   }
     for (int i = 0; i < inst->nodes.size(); i++) {
