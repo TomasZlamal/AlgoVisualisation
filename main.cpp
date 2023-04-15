@@ -2,8 +2,8 @@
 #include <wx/wx.h>
 #include <wx/timer.h>
 #include <vector>
-#include "app_state.hpp"
-#include "DFS.hpp"
+#include "app/app_state.hpp"
+#include "algorithms/DFS.hpp"
 
 class BasicDrawPane : public wxPanel
 {

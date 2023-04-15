@@ -20,28 +20,28 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="app_state.hpp">
+    <ClInclude Include="app\app_state.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="algo.hpp">
+    <ClInclude Include="algorithms\algo.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="util.hpp">
+    <ClInclude Include="app\util.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BFS.hpp">
+    <ClInclude Include="algorithms\BFS.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DFS.hpp">
+    <ClInclude Include="algorithms\DFS.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="meta.hpp">
+    <ClInclude Include="app\meta.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="all_node_algo.hpp">
+    <ClInclude Include="algorithms\all_node_algo.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="find_node_algo.hpp">
+    <ClInclude Include="algorithms\find_node_algo.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

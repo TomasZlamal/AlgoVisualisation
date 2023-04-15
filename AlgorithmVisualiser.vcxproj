@@ -130,14 +130,14 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="algo.hpp" />
-    <ClInclude Include="all_node_algo.hpp" />
-    <ClInclude Include="app_state.hpp" />
-    <ClInclude Include="BFS.hpp" />
-    <ClInclude Include="DFS.hpp" />
-    <ClInclude Include="find_node_algo.hpp" />
-    <ClInclude Include="meta.hpp" />
-    <ClInclude Include="util.hpp" />
+    <ClInclude Include="algorithms\algo.hpp" />
+    <ClInclude Include="algorithms\all_node_algo.hpp" />
+    <ClInclude Include="app\app_state.hpp" />
+    <ClInclude Include="algorithms\BFS.hpp" />
+    <ClInclude Include="algorithms\DFS.hpp" />
+    <ClInclude Include="algorithms\find_node_algo.hpp" />
+    <ClInclude Include="app\meta.hpp" />
+    <ClInclude Include="app\util.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
